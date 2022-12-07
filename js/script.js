@@ -3,4 +3,17 @@ $(function() {
 
   // Uncomment this line to fade out the red box on page load
   // $(".red-box").fadeOut(2000);
+  // $(".red-box").fadeIn(2000);
+  // $(".green-box").fadeOut(2000);
+  // $(".green-box").fadeIn(2000);
+  // $(".blue-box").fadeOut(2000);
+  // $(".blue-box").fadeIn(2000);
+  // $(".red-box").fadeTo(1000, 0.2);
+  // $(".green-box").fadeTo(1000, 0.4);
+  // $(".blue-box").fadeTo(1000, 0.6);
+  $(".blue-box").slideUp(4000);
+  $(".blue-box").slideDown(3000);
+  $("p").hide();
+  $("p").slideDown(3000);
+
 });
