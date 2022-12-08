@@ -11,9 +11,50 @@ $(function() {
   // $(".red-box").fadeTo(1000, 0.2);
   // $(".green-box").fadeTo(1000, 0.4);
   // $(".blue-box").fadeTo(1000, 0.6);
-  $(".blue-box").slideUp(4000);
-  $(".blue-box").slideDown(3000);
-  $("p").hide();
-  $("p").slideDown(3000);
+  // $(".blue-box").slideUp(4000);
+  // $(".blue-box").slideDown(3000);
+  // $("p").hide();
+  // $("p").slideDown(3000);
+  // $(".blue-box").animate(
+  //   {
+  //     "margin-left": "200px"
+  //   }, 2000, "swing"
+  // );
+  // $(".blue-box").animate(
+  //   {
+  //     "margin-left": "-=200px"
+  //   }, 2000, "swing"
+  // );
+  // fading the blue box after moving it to the right
+  // $('.blue-box').animate(
+  //   {
+  //     marginLeft: "200px",
+  //     opacity: "0",
+  //     height: "50px",
+  //     width: "50px",
+  //     marginTop: "25px"
+  //   }, 1500
+  // )
+  
+  // animating the font size
+  // $('p').animate(
+  //   {
+  //     fontSize: "20px"
+  //   }, 1000
+  // );
+  // chaining and delaying animations
+  // $('.red-box').fadeTo(1500, 0.2);
+  // $('.green-box').delay(1000).fadeTo(1500, 0.5);
+  // $('.blue-box').delay(2000).fadeTo(1500, 0.8);
 
+  // using callback functions to delay animations
+  // $('.red-box').fadeTo(1500, 0.3, function () {
+  //   $('.green-box').slideUp(1500, function () {
+  //     $('.green-box').slideDown(1500, function () {
+  //       $('.blue-box').fadeTo(1500, 0.85);
+  //     })
+  //   })
+  // });
+  // jquery code to prompt lightbox sign up
+  $('.lightbox').delay(500).fadeIn(1000);
 });
