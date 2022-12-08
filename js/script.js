@@ -56,5 +56,13 @@ $(function() {
   //   })
   // });
   // jquery code to prompt lightbox sign up
-  $('.lightbox').delay(500).fadeIn(1000);
+  // $('.lightbox').delay(500).fadeIn(1000);
+
+  // manipulating tags with css selectors
+  $('p:first').css('background-color', 'rgba(180,180,30,0.8)');
+  // $('.red-box').css('background-color', 'rgba(180,180,30,0.6)');
+  $('#list').css('background-color', 'rgba(180,180,30,0.6)');
+  $('ul:last').css('background-color', 'rgba(180,180,30,0.6)');
+  $('li:even').css('background-color', 'rgba(180,180,30,0.6)');
+  $("input:text").css('background-color', 'rgba(180,180,30,0.6');
 });
