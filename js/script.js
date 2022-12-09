@@ -74,4 +74,28 @@ $(function() {
   // $('#list').prev().css('background-color', 'rgba(180,180,30)'); //
   $(':header').next().css("background-color", "rgba(180,180,30,0.8)"); //
   $('form').children('input:text').css('background-color', 'rgba(180,180,30,0.8');
+
+  // Methods for filtering input
+  // find all the even list items
+  // $('#list').find('li').filter(":even").css('background-color', "rgba(180,180,30,0.8)");
+  // find all the even list items which are direct children
+  // $('#list').children("li").filter(":even").css('background-color', "rgba(180,180,30,0.8)");
+  // writing a custom function to filter even numbered list items
+  // $('li').filter((index) => index % 2 === 0).css('background-color', 'rgba(180,180,30,0.6');
+  // A built-in function to filter even numbered list items
+  // $('li').filter(':even').css('background-color', 'rgba(180,180,30,0.6');
+  // A built-in function to filter the last item in the list
+  // $('li').last().css('background-color', 'rgba(180,180,30,0.6');
+  // A built-in function to filter the number 5th list item in the list
+  // $('li').eq(3).css('background-color', 'rgba(180,180,30,0.6');
+  // Coloring the list items except the first one
+  $('li').not(":first").css('background-color', 'rgba(180,180,30,0.6');
 });
+$(function () {
+  $('ul ul:first').append('<li>I am the sub item.</li>');
+  $('<li>I am the last item</li>').appendTo($('ul ul:first'));
+  $('ul ul').prepend('<li class="firstItem">I am gonna be the first item</li>');
+  $('<li class="secondItem">I am gonna be the second item</li>').appendTo($('ul li ul.subList li.firstItem'));
+  $('p').after($('#list'));
+  
+})
