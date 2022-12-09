@@ -59,10 +59,19 @@ $(function() {
   // $('.lightbox').delay(500).fadeIn(1000);
 
   // manipulating tags with css selectors
-  $('p:first').css('background-color', 'rgba(180,180,30,0.8)');
+  // $('p:first').css('background-color', 'rgba(180,180,30,0.8)');
   // $('.red-box').css('background-color', 'rgba(180,180,30,0.6)');
-  $('#list').css('background-color', 'rgba(180,180,30,0.6)');
-  $('ul:last').css('background-color', 'rgba(180,180,30,0.6)');
-  $('li:even').css('background-color', 'rgba(180,180,30,0.6)');
-  $("input:text").css('background-color', 'rgba(180,180,30,0.6');
+  // $('#list').css('background-color', 'rgba(180,180,30,0.6)');
+  // $('ul:last').css('background-color', 'rgba(180,180,30,0.6)');
+  // $('li:even').css('background-color', 'rgba(180,180,30,0.6)');
+  // $("input:text").css('background-color', 'rgba(180,180,30,0.6');
+
+  // jquery traversals of elements
+  // $('#list').find("li").css('background-color', 'rgba(180,180,30,0.6)');
+  // $('#list').children("li").css('background-color', 'rgba(180,180,30,0.8)');
+  // $('#list').parent().css('background-color', 'rgba(180,180,30,0.8)');
+  // $('#list').siblings(':header').css('background-color', 'rgba(180,180,30)');
+  // $('#list').prev().css('background-color', 'rgba(180,180,30)'); //
+  $(':header').next().css("background-color", "rgba(180,180,30,0.8)"); //
+  $('form').children('input:text').css('background-color', 'rgba(180,180,30,0.8');
 });
