@@ -165,3 +165,23 @@ $(function () {
 //     }
 // });
 // });
+$(function () {
+  var gallaryImage = $('.gallery').find('img').first();
+  console.log(gallaryImage);
+  images = [
+    'images/laptop-mobile_small.jpg',
+    'images/laptop-on-table_small.jpg',
+    'images/people-office-group-team_small.jpg'
+  ];
+
+  var index = 0;
+  setInterval(function () {
+    index = (index + 1) % images.length;
+
+    gallaryImage.fadeOut(function () {
+      $(this).attr('src', images[index]);
+      $(this).fadeIn();
+    });
+    // console.log(gallaryImage.attr('src'));
+  }, 2000);
+});
