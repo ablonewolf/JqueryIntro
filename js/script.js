@@ -1,4 +1,4 @@
-$(function() {
+$(function () {
   // jQuery goes here...
 
   // Uncomment this line to fade out the red box on page load
@@ -35,7 +35,7 @@ $(function() {
   //     marginTop: "25px"
   //   }, 1500
   // )
-  
+
   // animating the font size
   // $('p').animate(
   //   {
@@ -89,7 +89,7 @@ $(function() {
   // A built-in function to filter the number 5th list item in the list
   // $('li').eq(3).css('background-color', 'rgba(180,180,30,0.6');
   // Coloring the list items except the first one
-  $('li').not(":first").css('background-color', 'rgba(180,180,30,0.6');
+  $('li').not(':first').css('background-color', 'rgba(180,180,30,0.6');
 });
 
 // Adding new items to the DOM using JQuery
@@ -97,10 +97,11 @@ $(function () {
   $('ul ul:first').append('<li>I am the sub item.</li>');
   $('<li>I am the last item</li>').appendTo($('ul ul:first'));
   $('ul ul').prepend('<li class="firstItem">I am gonna be the first item</li>');
-  $('<li class="secondItem">I am gonna be the second item</li>').appendTo($('ul li ul li.firstItem'));
+  $('<li class="secondItem">I am gonna be the second item</li>').appendTo(
+    $('ul li ul li.firstItem')
+  );
   // $('p').after($('#list'));
   $('<h2>Hi. I am Arka Bhuiyan.</h2>').prependTo('#content');
-  
 });
 
 $(function () {
@@ -127,33 +128,40 @@ $(function () {
   // empty everything inside the paragraph
   // $("p:first").empty();
 
-  // Empty everything inside the boxes, without removing them. 
-  $(".red-box, .green-box, .blue-box").empty();
+  // Empty everything inside the boxes, without removing them.
+  $('.red-box, .green-box, .blue-box').empty();
+  var specialLink = $('#special-link');
+  console.log(specialLink.attr('href'));
+  specialLink.attr('href', 'http://google.com');
+  var maleButton = $('#male');
+  var femaleButton = $('#female');
+  console.log(maleButton.prop('checked'));
+  console.log(femaleButton.prop('checked'));
 });
-$(function () {
-  let firstList = $("ul#list li ul li");
-  $.ajax({
-    type: 'GET',
-    dataType: 'JSON',
-    url: "https://reqres.in/api/users",
-    success: function (response) {
-      if (response != null) {
-        console.log(response.data);
-        // console.log(response.data[0]);
-        for (let i in response.data) {
-            let email = response.data[i].email;
-            console.log(response.data[i]);
-            console.log(email);
-            // var listElement = $("<li>",{"email:":response.data[i].email},"</li>");
-            // $("ul li ul li").append($("li").text(response.data[i].email));
-          // $("li").text(email).appendTo($("ul li ul li"));
-          let temp = `<li>email:${email}</li>`;
-          $("ul ul").append(temp);
-            }
-        }
-    },
-    error: function () {
-        console.log("error in the api.");
-    }
-});
-});  
+// $(function () {
+//   let firstList = $("ul#list li ul li");
+//   $.ajax({
+//     type: 'GET',
+//     dataType: 'JSON',
+//     url: "https://reqres.in/api/users",
+//     success: function (response) {
+//       if (response != null) {
+//         console.log(response.data);
+//         // console.log(response.data[0]);
+//         for (let i in response.data) {
+//             let email = response.data[i].email;
+//             console.log(response.data[i]);
+//             console.log(email);
+//             // var listElement = $("<li>",{"email:":response.data[i].email},"</li>");
+//             // $("ul li ul li").append($("li").text(response.data[i].email));
+//           // $("li").text(email).appendTo($("ul li ul li"));
+//           let temp = `<li>email:${email}</li>`;
+//           $("ul ul").append(temp);
+//             }
+//         }
+//     },
+//     error: function () {
+//         console.log("error in the api.");
+//     }
+// });
+// });
