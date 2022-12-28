@@ -1,6 +1,5 @@
 $(function () {
   // jQuery goes here...
-
   // Uncomment this line to fade out the red box on page load
   // $(".red-box").fadeOut(2000);
   // $(".red-box").fadeIn(2000);
@@ -35,7 +34,6 @@ $(function () {
   //     marginTop: "25px"
   //   }, 1500
   // )
-
   // animating the font size
   // $('p').animate(
   //   {
@@ -46,7 +44,6 @@ $(function () {
   // $('.red-box').fadeTo(1500, 0.2);
   // $('.green-box').delay(1000).fadeTo(1500, 0.5);
   // $('.blue-box').delay(2000).fadeTo(1500, 0.8);
-
   // using callback functions to delay animations
   // $('.red-box').fadeTo(1500, 0.3, function () {
   //   $('.green-box').slideUp(1500, function () {
@@ -57,7 +54,6 @@ $(function () {
   // });
   // jquery code to prompt lightbox sign up
   // $('.lightbox').delay(500).fadeIn(1000);
-
   // manipulating tags with css selectors
   // $('p:first').css('background-color', 'rgba(180,180,30,0.8)');
   // $('.red-box').css('background-color', 'rgba(180,180,30,0.6)');
@@ -65,31 +61,45 @@ $(function () {
   // $('ul:last').css('background-color', 'rgba(180,180,30,0.6)');
   // $('li:even').css('background-color', 'rgba(180,180,30,0.6)');
   // $("input:text").css('background-color', 'rgba(180,180,30,0.6');
-
+});
+// traversing dom elements
+$(function () {
   // jquery traversals of elements
-  // $('#list').find("li").css('background-color', 'rgba(180,180,30,0.6)');
-  // $('#list').children("li").css('background-color', 'rgba(180,180,30,0.8)');
+  // $('#list').find('li').css('background-color', 'rgba(180,180,30,0.6)');
+  // $('#list').children('li').css('background-color', 'rgba(180,180,30,0.8)');
   // $('#list').parent().css('background-color', 'rgba(180,180,30,0.8)');
   // $('#list').siblings(':header').css('background-color', 'rgba(180,180,30)');
-  // $('#list').prev().css('background-color', 'rgba(180,180,30)'); //
-  // $(':header').next().css("background-color", "rgba(180,180,30,0.8)"); //
-  // $('form').children('input:text').css('background-color', 'rgba(180,180,30,0.8');
+  // $('#list').prev().css('background-color', 'rgba(180,180,30)');
+  // $(':header').next().css('background-color', 'rgba(180,180,30,0.8)');
+  $('form')
+    .children('input:text')
+    .css('background-color', 'rgba(180,180,30,0.8');
 
   // Methods for filtering input
   // find all the even list items
-  // $('#list').find('li').filter(":even").css('background-color', "rgba(180,180,30,0.8)");
+  // $('#list')
+  //   .find('li')
+  //   .filter(':even')
+  //   .css('background-color', 'rgba(180,180,30,0.8)');
   // find all the even list items which are direct children
-  // $('#list').children("li").filter(":even").css('background-color', "rgba(180,180,30,0.8)");
+  // $('#list')
+  //   .children('li')
+  //   .filter(':even')
+  //   .css('background-color', 'rgba(180,180,30,0.8)');
   // writing a custom function to filter even numbered list items
-  // $('li').filter((index) => index % 2 === 0).css('background-color', 'rgba(180,180,30,0.6');
+  // $('li')
+  //   .filter((index) => index % 2 === 0)
+  //   .css('background-color', 'rgba(180,180,30,0.6');
   // A built-in function to filter even numbered list items
   // $('li').filter(':even').css('background-color', 'rgba(180,180,30,0.6');
+  // A built-in function to filter odd numbered list items
+  // $('li').filter(':odd').css('background-color', 'rgba(30,30,30,0.6');
   // A built-in function to filter the last item in the list
   // $('li').last().css('background-color', 'rgba(180,180,30,0.6');
-  // A built-in function to filter the number 5th list item in the list
-  // $('li').eq(3).css('background-color', 'rgba(180,180,30,0.6');
+  // A built-in function to filter the number 4th list item in the list
+  $('li').eq(3).css('background-color', 'rgba(180,180,30,0.6');
   // Coloring the list items except the first one
-  $('li').not(':first').css('background-color', 'rgba(180,180,30,0.6');
+  // $('li').not(':first').css('background-color', 'rgba(180,180,30,0.6');
 });
 
 // Adding new items to the DOM using JQuery
