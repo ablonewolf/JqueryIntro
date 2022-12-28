@@ -126,8 +126,8 @@ $(function () {
   // $(blueBox).replaceAll(".red-box, .green-box");
 });
 
-// removing elements using jQuery
 $(function () {
+  // removing elements using jQuery
   // $('li').remove();
   // $("form").children().not("input[type='email']").remove();
 
@@ -139,7 +139,7 @@ $(function () {
   // $("p:first").empty();
 
   // Empty everything inside the boxes, without removing them.
-  $('.red-box, .green-box, .blue-box').empty();
+  // $('.red-box, .green-box, .blue-box').empty();
   var specialLink = $('#special-link');
   console.log(specialLink.attr('href'));
   specialLink.attr('href', 'http://google.com');
@@ -177,7 +177,7 @@ $(function () {
 // });
 $(function () {
   var gallaryImage = $('.gallery').find('img').first();
-  console.log(gallaryImage);
+  // console.log(gallaryImage);
   images = [
     'images/laptop-mobile_small.jpg',
     'images/laptop-on-table_small.jpg',
@@ -194,4 +194,14 @@ $(function () {
     });
     // console.log(gallaryImage.attr('src'));
   }, 2000);
+});
+
+$(function () {
+  // changing the default font size for paragraph
+  $('p').css('font-size', '19px');
+
+  var paragraphProperties = $('p').css(['font-size', 'line-height', 'color']);
+  console.log(paragraphProperties);
+  var redBox = $('.red-box');
+  redBox.css('user-select', () => 'none');
 });
