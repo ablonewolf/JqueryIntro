@@ -220,7 +220,7 @@ $(function () {
   // });
 
   // changing the css class to green-box
-  $('.dummy').removeClass('dummy').addClass('green-box');
+  // $('.dummy').removeClass('dummy').addClass('green-box');
 });
 
 $(function () {
@@ -262,4 +262,48 @@ $(function () {
     $(this).fadeOut(500);
     $(this).fadeIn(1000);
   });
+
+  // some hover handlers
+  $('#btn-hover').hover(function () {
+    alert('Hover button was hovered.');
+  });
+
+  // $('.green-box').hover(function () {
+  //   box = $(this);
+  //   // message = box.text();
+  //   box.text('It is hovered.');
+  //   setTimeout('box.text("Green");', 500);
+  // });
+  let greenBox = $('.green-box');
+  let text = $('.green-box').text();
+  greenBox.hover(
+    (event) => {
+      $(event.currentTarget).text('hovered');
+    },
+    (event) => {
+      $(event.currentTarget).text(text);
+    }
+  );
+
+  // mouse enter and mouse leave handlers
+  let blueBox = $('.blue-box');
+  blueBox.mouseenter(function () {
+    $(this).stop().fadeTo(1000, 0.5);
+  });
+  blueBox.mouseleave(function () {
+    $(this).stop().fadeTo(1000, 1);
+  });
+
+  // hover(function1, function2)
+
+  let redBox = $('.red-box');
+  let redText = $('.red-box').text();
+  redBox.hover(
+    function () {
+      $(this).text('Hovered');
+    },
+    function () {
+      $(this).text(redText);
+    }
+  );
 });
