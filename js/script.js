@@ -331,3 +331,16 @@ $(function () {
   //     });
   //   });
 });
+
+$(function () {
+  let prevColor = $('li').css('color');
+  let resetColor = function () {
+    $(this).css('color', prevColor);
+  };
+  // delegating events
+  let changeColor = function () {
+    $(this).css('color', '#777');
+  };
+  $('body').on('mouseenter', 'li', changeColor);
+  $('body').on('mouseleave', 'li', resetColor);
+});
