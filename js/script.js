@@ -209,7 +209,7 @@ $(function () {
 $(function () {
   // adding and removing css classes to elements using jquery
   $('a').addClass('fancy-link');
-  $('p:first').addClass('large emphasize');
+  // $('p:first').addClass('large emphasize');
 
   $('li li').addClass(function (index) {
     $(this).addClass('item-' + index);
@@ -237,4 +237,29 @@ $(function () {
   console.log(gallery.data());
   gallery.removeData('name');
   console.log(gallery.data());
+});
+
+$(function () {
+  // retrieving and changing the content of html
+  let firstPar = $('p:first');
+  console.log(firstPar.text());
+  console.log(firstPar.html());
+  firstPar.html(
+    firstPar.html() +
+      '<br>' +
+      '<strong>Hello World. This is Arka.</strong> I am editing this webpage to practice Jquery.'
+  );
+});
+
+$(function () {
+  // some onclick event handlers
+  $('#btn-click').click(function (event) {
+    console.log(event);
+    alert('I was clicked');
+  });
+
+  $('.red-box').click(function () {
+    $(this).fadeOut(500);
+    $(this).fadeIn(1000);
+  });
 });
