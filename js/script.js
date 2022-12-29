@@ -205,3 +205,20 @@ $(function () {
   var redBox = $('.red-box');
   redBox.css('user-select', () => 'none');
 });
+
+$(function () {
+  // adding and removing css classes to elements using jquery
+  $('a').addClass('fancy-link');
+  $('p:first').addClass('large emphasize');
+
+  $('li li').addClass(function (index) {
+    $(this).addClass('item-' + index);
+  });
+
+  // $('div').addClass(function (index, currentClass) {
+  //   if (currentClass === 'dummy') return 'red-box';
+  // });
+
+  // changing the css class to green-box
+  $('.dummy').removeClass('dummy').addClass('green-box');
+});
