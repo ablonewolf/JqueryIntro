@@ -176,24 +176,23 @@ $(function () {
 // });
 // });
 $(function () {
-  var gallaryImage = $('.gallery').find('img').first();
-  // console.log(gallaryImage);
-  images = [
-    'images/laptop-mobile_small.jpg',
-    'images/laptop-on-table_small.jpg',
-    'images/people-office-group-team_small.jpg'
-  ];
-
-  var index = 0;
-  setInterval(function () {
-    index = (index + 1) % images.length;
-
-    gallaryImage.fadeOut(function () {
-      $(this).attr('src', images[index]);
-      $(this).fadeIn();
-    });
-    // console.log(gallaryImage.attr('src'));
-  }, 2000);
+  // slideshow of image gallery
+  // var gallaryImage = $('.gallery').find('img').first();
+  // // console.log(gallaryImage);
+  // images = [
+  //   'images/laptop-mobile_small.jpg',
+  //   'images/laptop-on-table_small.jpg',
+  //   'images/people-office-group-team_small.jpg'
+  // ];
+  // var index = 0;
+  // setInterval(function () {
+  //   index = (index + 1) % images.length;
+  //   gallaryImage.fadeOut(function () {
+  //     $(this).attr('src', images[index]);
+  //     $(this).fadeIn();
+  //   });
+  //   // console.log(gallaryImage.attr('src'));
+  // }, 2000);
 });
 
 $(function () {
@@ -306,4 +305,29 @@ $(function () {
       $(this).text(redText);
     }
   );
+});
+$(function () {
+  // showing next image on click.
+  let images = [
+    'images/laptop-mobile_small.jpg',
+    'images/laptop-on-table_small.jpg',
+    'images/people-office-group-team_small.jpg'
+  ];
+  let index = 0;
+  let galleryImage = $('.gallery').find('img');
+  const switchToNextImage = function () {
+    index = (index + 1) % images.length;
+    $(this).fadeOut(function () {
+      $(this).attr('src', images[index]).fadeIn();
+    });
+  };
+  galleryImage.on('click', switchToNextImage);
+  // $('.gallery')
+  //   .find('img')
+  //   .on('click', function () {
+  //     index = (index + 1) % images.length;
+  //     $(this).fadeOut(function () {
+  //       $(this).attr('src', images[index]).fadeIn();
+  //     });
+  //   });
 });
