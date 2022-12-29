@@ -222,3 +222,19 @@ $(function () {
   // changing the css class to green-box
   $('.dummy').removeClass('dummy').addClass('green-box');
 });
+
+$(function () {
+  // changing data of an element using jquery
+  let gallery = $('.gallery');
+  let images = [
+    'images/laptop-mobile_small.jpg',
+    'images/laptop-on-table_small.jpg',
+    'images/people-office-group-team_small.jpg'
+  ];
+  gallery.data('availableImages', images);
+  console.log(gallery.data('availableImages'));
+  gallery.data('name', 'Awesome Gallery');
+  console.log(gallery.data());
+  gallery.removeData('name');
+  console.log(gallery.data());
+});
