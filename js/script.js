@@ -127,19 +127,19 @@ $(function () {
 });
 
 $(function () {
-  // removing elements using jQuery
-  // $('li').remove();
-  // $("form").children().not("input[type='email']").remove();
+  /* // removing elements using jQuery
+  $('li').remove();
+  $("form").children().not("input[type='email']").remove();
 
   // detaching the list item and attaching it again to the DOM
-  // let detachedItem = $("li").detach();
-  // $("#content").append(detachedItem);
+  let detachedItem = $("li").detach();
+  $("#content").append(detachedItem);
 
   // empty everything inside the paragraph
-  // $("p:first").empty();
+  $("p:first").empty();
 
   // Empty everything inside the boxes, without removing them.
-  // $('.red-box, .green-box, .blue-box').empty();
+  $('.red-box, .green-box, .blue-box').empty(); */
   var specialLink = $('#special-link');
   console.log(specialLink.attr('href'));
   specialLink.attr('href', 'http://google.com');
@@ -148,51 +148,52 @@ $(function () {
   console.log(maleButton.prop('checked'));
   console.log(femaleButton.prop('checked'));
 });
-// $(function () {
-//   let firstList = $("ul#list li ul li");
-//   $.ajax({
-//     type: 'GET',
-//     dataType: 'JSON',
-//     url: "https://reqres.in/api/users",
-//     success: function (response) {
-//       if (response != null) {
-//         console.log(response.data);
-//         // console.log(response.data[0]);
-//         for (let i in response.data) {
-//             let email = response.data[i].email;
-//             console.log(response.data[i]);
-//             console.log(email);
-//             // var listElement = $("<li>",{"email:":response.data[i].email},"</li>");
-//             // $("ul li ul li").append($("li").text(response.data[i].email));
-//           // $("li").text(email).appendTo($("ul li ul li"));
-//           let temp = `<li>email:${email}</li>`;
-//           $("ul ul").append(temp);
-//             }
-//         }
-//     },
-//     error: function () {
-//         console.log("error in the api.");
-//     }
-// });
-// });
+/* $(function () {
+  let firstList = $("ul#list li ul li");
+  $.ajax({
+    type: 'GET',
+    dataType: 'JSON',
+    url: "https://reqres.in/api/users",
+    success: function (response) {
+      if (response != null) {
+        console.log(response.data);
+        // console.log(response.data[0]);
+        for (let i in response.data) {
+            let email = response.data[i].email;
+            console.log(response.data[i]);
+            console.log(email);
+            // var listElement = $("<li>",{"email:":response.data[i].email},"</li>");
+            // $("ul li ul li").append($("li").text(response.data[i].email));
+          // $("li").text(email).appendTo($("ul li ul li"));
+          let temp = `<li>email:${email}</li>`;
+          $("ul ul").append(temp);
+            }
+        }
+    },
+    error: function () {
+        console.log("error in the api.");
+    }
+});
+}); */
 $(function () {
-  // slideshow of image gallery
-  // var gallaryImage = $('.gallery').find('img').first();
-  // // console.log(gallaryImage);
-  // images = [
-  //   'images/laptop-mobile_small.jpg',
-  //   'images/laptop-on-table_small.jpg',
-  //   'images/people-office-group-team_small.jpg'
-  // ];
-  // var index = 0;
-  // setInterval(function () {
-  //   index = (index + 1) % images.length;
-  //   gallaryImage.fadeOut(function () {
-  //     $(this).attr('src', images[index]);
-  //     $(this).fadeIn();
-  //   });
-  //   // console.log(gallaryImage.attr('src'));
-  // }, 2000);
+  /*  
+  //  slideshow of image gallery
+  var gallaryImage = $('.gallery').find('img').first();
+  // console.log(gallaryImage);
+  images = [
+    'images/laptop-mobile_small.jpg',
+    'images/laptop-on-table_small.jpg',
+    'images/people-office-group-team_small.jpg'
+  ];
+  var index = 0;
+  setInterval(function () {
+    index = (index + 1) % images.length;
+    gallaryImage.fadeOut(function () {
+      $(this).attr('src', images[index]);
+      $(this).fadeIn();
+    });
+    // console.log(gallaryImage.attr('src'));
+  }, 2000); */
 });
 
 $(function () {
@@ -214,12 +215,12 @@ $(function () {
     $(this).addClass('item-' + index);
   });
 
-  // $('div').addClass(function (index, currentClass) {
-  //   if (currentClass === 'dummy') return 'red-box';
-  // });
+  /* $('div').addClass(function (index, currentClass) {
+    if (currentClass === 'dummy') return 'red-box';
+  });
 
   // changing the css class to green-box
-  // $('.dummy').removeClass('dummy').addClass('green-box');
+  $('.dummy').removeClass('dummy').addClass('green-box'); */
 });
 
 $(function () {
@@ -252,27 +253,37 @@ $(function () {
 
 $(function () {
   // some onclick event handlers
-  $('#btn-click').click(function (event) {
-    console.log(event);
-    alert('I was clicked');
-  });
+  $('#btn-click').click(
+    {
+      user: 'Arka',
+      email: 'arkabhuiyancsedu@gmail.com'
+    },
+    function (event) {
+      greetUser(event.data);
+    }
+  );
+  const greetUser = (userData) => {
+    username = userData.user || 'Anonymous';
+    email = userData.email || 'unknown@email.com';
 
+    alert('Welcome back ' + username + ' ' + 'with email id : ' + email);
+  };
   $('.red-box').click(function () {
     $(this).fadeOut(500);
     $(this).fadeIn(1000);
   });
 
   // some hover handlers
-  $('#btn-hover').hover(function () {
+  /* $('#btn-hover').hover(function () {
     alert('Hover button was hovered.');
-  });
+  }); */
 
-  // $('.green-box').hover(function () {
-  //   box = $(this);
-  //   // message = box.text();
-  //   box.text('It is hovered.');
-  //   setTimeout('box.text("Green");', 500);
-  // });
+  /* $('.green-box').hover(function () {
+    box = $(this);
+    // message = box.text();
+    box.text('It is hovered.');
+    setTimeout('box.text("Green");', 500);
+  }); */
   let greenBox = $('.green-box');
   let text = $('.green-box').text();
   greenBox.hover(
@@ -322,14 +333,14 @@ $(function () {
     });
   };
   galleryImage.on('click', switchToNextImage);
-  // $('.gallery')
-  //   .find('img')
-  //   .on('click', function () {
-  //     index = (index + 1) % images.length;
-  //     $(this).fadeOut(function () {
-  //       $(this).attr('src', images[index]).fadeIn();
-  //     });
-  //   });
+  /*  $('.gallery')
+    .find('img')
+    .on('click', function () {
+      index = (index + 1) % images.length;
+      $(this).fadeOut(function () {
+        $(this).attr('src', images[index]).fadeIn();
+      });
+    }); */
 });
 
 $(function () {
