@@ -71,9 +71,10 @@ $(function () {
   // $('#list').siblings(':header').css('background-color', 'rgba(180,180,30)');
   // $('#list').prev().css('background-color', 'rgba(180,180,30)');
   // $(':header').next().css('background-color', 'rgba(180,180,30,0.8)');
-  $('form')
+  // setting the bg color of input text field
+  /*  $('form')
     .children('input:text')
-    .css('background-color', 'rgba(180,180,30,0.8');
+    .css('background-color', 'rgba(180,180,30,0.8'); */
 
   // Methods for filtering input
   // find all the even list items
@@ -411,6 +412,26 @@ $(function () {
       } else {
         $('.blue-box').css('margin-left', 0);
       }
+    }
+  });
+});
+
+$(function () {
+  let inputFields = $('input:text, input:password, textarea');
+  inputFields.focus(function () {
+    $(this).css('box-shadow', '0 0 4px #666');
+  });
+
+  inputFields.blur(function () {
+    $(this).css('box-shadow', 'none');
+  });
+
+  $('#name').blur(function () {
+    let name = $(this).val();
+    if (name.length <= 3) {
+      $(this).css('box-shadow', '0 0 4px #811');
+    } else {
+      $(this).css('box-shadow', '0 0 4px #181');
     }
   });
 });
