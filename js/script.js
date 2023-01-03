@@ -319,7 +319,7 @@ $(function () {
 });
 $(function () {
   // showing next image on click.
-  let images = [
+  /* let images = [
     'images/laptop-mobile_small.jpg',
     'images/laptop-on-table_small.jpg',
     'images/people-office-group-team_small.jpg'
@@ -332,7 +332,7 @@ $(function () {
       $(this).attr('src', images[index]).fadeIn();
     });
   };
-  galleryImage.on('click', switchToNextImage);
+  galleryImage.on('click', switchToNextImage); */
   /*  $('.gallery')
     .find('img')
     .on('click', function () {
@@ -354,4 +354,30 @@ $(function () {
   };
   $('body').on('mouseenter', 'li', changeColor);
   $('body').on('mouseleave', 'li', resetColor);
+});
+
+$(function () {
+  let galleryItems = $('.gallery').find('img');
+  galleryItems.css('width', '33%').css('opacity', '.7');
+
+  galleryItems.mouseenter(function () {
+    $(this).stop().fadeTo(500, 1);
+  });
+
+  galleryItems.mouseleave(function () {
+    $(this).stop().fadeTo(500, 0.7);
+  });
+
+  galleryItems.click(function () {
+    let source = $(this).attr('src');
+    let caption = $(this).attr('alt');
+    let image = $('<img>').attr('src', source).css('width', '100%');
+    let heading = $('<h2></h2>').text(caption);
+
+    $('.lightbox').empty().append(heading).append(image).fadeIn(1500);
+  });
+
+  $('.lightbox').click(function () {
+    $(this).stop().fadeOut();
+  });
 });
