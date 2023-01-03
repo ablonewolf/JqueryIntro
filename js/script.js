@@ -381,3 +381,36 @@ $(function () {
     $(this).stop().fadeOut();
   });
 });
+
+$(function () {
+  // $('html').keydown(function (e) {
+  //   console.log(e.which);
+  // });
+
+  let rightArrowKey = 39;
+  let leftArrowKey = 37;
+
+  $('html').keydown(function (e) {
+    if (e.which == rightArrowKey) {
+      console.log(e.which);
+      $('.blue-box').stop().animate(
+        {
+          marginLeft: '+=10px'
+        },
+        50
+      );
+    } else if (e.which == leftArrowKey) {
+      marginLeft = parseInt($('.blue-box').css('margin-left'));
+      if (marginLeft > 0) {
+        $('.blue-box').stop().animate(
+          {
+            marginLeft: '-=10px'
+          },
+          50
+        );
+      } else {
+        $('.blue-box').css('margin-left', 0);
+      }
+    }
+  });
+});
