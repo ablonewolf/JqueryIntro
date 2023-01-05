@@ -417,7 +417,7 @@ $(function () {
 });
 
 $(function () {
-  let inputFields = $('input:text, input:password, textarea');
+  let inputFields = $('#name, #password, #email, textarea');
   inputFields.focus(function () {
     $(this).css('box-shadow', '0 0 4px #666');
   });
