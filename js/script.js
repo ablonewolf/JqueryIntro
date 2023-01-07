@@ -435,3 +435,23 @@ $(function () {
     }
   });
 });
+
+$(document).ready(function () {
+  $(function () {
+    $('#form').change(function () {
+      let radioButtonChecked = $('input[name="gender"]').is(':checked');
+      if (radioButtonChecked) {
+        $(this).css('box-shadow', '0 0 4px #181');
+      } else {
+        $(this).css('box-shadow', '0 0 4px #811');
+      }
+    });
+  });
+});
+
+$(function () {
+  $('#selection').change(function () {
+    let selectedOption = $(this).find(':selected').text();
+    $(this).attr('title', selectedOption);
+  });
+});
