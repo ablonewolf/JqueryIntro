@@ -477,7 +477,10 @@ $(function () {
 }); */
 
 $(function () {
-  $('#form').submit(function (event) {
+  let form = $('#form');
+
+  enableFastFeedback(form);
+  form.submit(function (event) {
     let name = $('#name').val().trim();
     let password = $('#password').val().trim();
     let email = $('#email').val().trim();
@@ -491,6 +494,68 @@ $(function () {
     validateGenderField(checked, event);
   });
 });
+
+function enableFastFeedback(formElement) {
+  let nameInput = formElement.find('#name');
+  let passwordInput = formElement.find('#password');
+  let emailInput = formElement.find('#email');
+  let messageInput = formElement.find('#message');
+  let genderInpput = formElement.find('input[name="gender"]');
+
+  nameInput.blur(function (event) {
+    let name = $(this).val().trim();
+    validateNamefield(name, event);
+    if (!isValidName(name)) {
+      $(this).css({ 'box-shadow': '0 0 4px #811', border: '1px solid #600' });
+    } else {
+      $(this).css({ 'box-shadow': '0 0 4px #181', border: '1px solid #060' });
+    }
+  });
+
+  passwordInput.blur(function (event) {
+    let password = $(this).val().trim();
+    validatePasswordField(password, event);
+
+    if (!isValidPassword(password)) {
+      $(this).css({ 'box-shadow': '0 0 4px #811', border: '1px solid #600' });
+    } else {
+      $(this).css({ 'box-shadow': '0 0 4px #181', border: '1px solid #060' });
+    }
+  });
+
+  emailInput.blur(function (event) {
+    let email = $(this).val().trim();
+    validateEmailField(email, event);
+
+    if (!isValidName(email)) {
+      $(this).css({ 'box-shadow': '0 0 4px #811', border: '1px solid #600' });
+    } else {
+      $(this).css({ 'box-shadow': '0 0 4px #181', border: '1px solid #060' });
+    }
+  });
+
+  messageInput.blur(function (event) {
+    let message = $(this).val().trim();
+    validateMessageField(message, event);
+
+    if (!isValidMessage(message)) {
+      $(this).css({ 'box-shadow': '0 0 4px #811', border: '1px solid #600' });
+    } else {
+      $(this).css({ 'box-shadow': '0 0 4px #181', border: '1px solid #060' });
+    }
+  });
+
+  genderInpput.blur(function (event) {
+    let gender = $(this).is(':checked');
+    validateGenderField(gender, event);
+
+    if (!gender) {
+      $(this).css({ 'box-shadow': '0 0 4px #811', border: '1px solid #600' });
+    } else {
+      $(this).css({ 'box-shadow': '0 0 4px #181', border: '1px solid #060' });
+    }
+  });
+}
 
 function validateNamefield(name, event) {
   if (!isValidName(name)) {
