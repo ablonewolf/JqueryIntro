@@ -457,7 +457,7 @@ $(function () {
   });
 });
 
-$(function () {
+/* $(function () {
   $('#form').submit(function (event) {
     let message = $('#message').val().trim();
     let radioButtonChecked = $('input[name="gender"]').is(':checked');
@@ -474,4 +474,77 @@ $(function () {
       // form will be submitted.
     }
   });
+}); */
+
+$(function () {
+  $('#form').submit(function (event) {
+    let name = $('#name').val().trim();
+    let password = $('#password').val().trim();
+    let email = $('#email').val().trim();
+    let message = $('#message').val().trim();
+    let checked = $('input[name="gender"]').is(':checked');
+
+    validateNamefield(name, event);
+    validatePasswordField(password, event);
+    validateEmailField(email, event);
+    validateMessageField(message, event);
+    validateGenderField(checked, event);
+  });
 });
+
+function validateNamefield(name, event) {
+  if (!isValidName(name)) {
+    $('#name-feedback').text('Please enter a valid name');
+    event.preventDefault();
+  } else {
+    $('#name-feedback').text('');
+  }
+}
+
+function validatePasswordField(password, event) {
+  if (!isValidPassword(password)) {
+    $('#password-feedback').text('Please enter a valid password');
+    event.preventDefault();
+  } else {
+    $('#password-feedback').text('');
+  }
+}
+
+function validateEmailField(email, event) {
+  if (!isValidName(email)) {
+    $('#email-feedback').text('Please enter a valid email address');
+    event.preventDefault();
+  } else {
+    $('#email-feedback').text('');
+  }
+}
+
+function validateMessageField(message, event) {
+  if (!isValidMessage(message)) {
+    $('#message-feedback').text('Please enter a valid message');
+    event.preventDefault();
+  } else {
+    $('#message-feedback').text('');
+  }
+}
+
+function validateGenderField(gender, event) {
+  if (!gender) {
+    $('#gender-feedback').text('Please select an option for the gender');
+    event.preventDefault();
+  } else {
+    $('#gender-feedback').text();
+  }
+}
+
+function isValidName(name) {
+  return name.length >= 2;
+}
+
+function isValidPassword(password) {
+  return password.length >= 4;
+}
+
+function isValidMessage(message) {
+  return message.length >= 8;
+}
