@@ -436,7 +436,8 @@ $(function () {
   });
 });
 
-$(document).ready(function () {
+// a change handler for the form.
+/* $(document).ready(function () {
   $(function () {
     $('#form').change(function () {
       let radioButtonChecked = $('input[name="gender"]').is(':checked');
@@ -447,11 +448,30 @@ $(document).ready(function () {
       }
     });
   });
-});
+}); */
 
 $(function () {
   $('#selection').change(function () {
     let selectedOption = $(this).find(':selected').text();
     $(this).attr('title', selectedOption);
+  });
+});
+
+$(function () {
+  $('#form').submit(function (event) {
+    let message = $('#message').val().trim();
+    let radioButtonChecked = $('input[name="gender"]').is(':checked');
+    if (radioButtonChecked) {
+      $(this).css('box-shadow', '0 0 4px #181');
+    } else {
+      $(this).css('box-shadow', '0 0 4px #811');
+    }
+    if (message === '' || !radioButtonChecked) {
+      $('#message').css('box-shadow', '0 0 4px #811');
+      $('input[name="gender"]').css('box-shadow', '0 0 4px #811');
+      event.preventDefault();
+    } else {
+      // form will be submitted.
+    }
   });
 });
